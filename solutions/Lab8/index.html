@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab8</title>
+    <style>
+        table {
+            width: 50%;
+        }
+      
+    </style>
+    <script>
+        function multiplicationTable(maxRows, maxCols) {
+            var table = "<table>";
+            for (var row = 1; row < maxRows + 1; row++) {
+                table += "<tr>";
+                for (var col = 1; col < maxCols + 1; col++) {
+                    table += `<td> ${row * col} </td>`;
+
+                }
+                table += "</tr>";
+
+            }
+            table += "</table>";
+
+            return table;
+        }
+
+        function getNames() {
+            var names = ["Alby", "Alex", "Glen", "Thomas", "Tyrell"];
+            var ages = [21, 24, 23, 26, 19];
+            for (var i = 0; i < names.length; i++) {
+                document.write("<p>" + names[i] + " is " + ages[i] + " years old</p>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Use the multiplicationTableFunction</p>
+    <script>
+        document.write(multiplicationTable(12, 12));
+    </script>
+    <p>Use function GetNames</p>
+    <script>
+        getNames();
+    </script>
+</body>
+</html>
