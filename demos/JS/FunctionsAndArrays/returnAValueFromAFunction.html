@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return a value from a function</title>
+    <script>
+        // Function declaration - hoisted & global
+        function addNumbers(max) {
+            let total = 0;
+
+            for (let i = 0; i <= max; i++) {
+                total += i;
+            }
+
+            return total;
+        }
+
+        // Function Expression
+        let addNumbersExp = function(max) {
+            var total = 0;
+
+            for (var i = 0; i <= max; i++) {
+                total += i;
+            }
+            return total;
+        }
+
+        // arrow function
+        let addNumbersArrow = (max) => {
+            var total = 0;
+
+            for (var i = 0; i <= max; i++) {
+                total += i;
+            }
+            return total;
+        }
+
+    </script>
+</head>
+<body>
+    <p>This time return the value from the function</p>
+
+    <script>
+        let result = addNumbersArrow(10);
+        document.write("Total is: " + result);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Arrays</title>
+</head>
+<body>
+    <p>Using arrays</p>
+    <script>
+
+        let names = ['Bob', 'Jon', 'Linda'];
+
+        let ages  = [21, 18, 20];
+
+        console.log(names[2]); // "Linda"
+
+        // for (let i = 0; i < names.length; i++) {
+        //     document.write(`${names[i]} is ${ages[i]} years old<br />`);
+        // }
+
+        for (let name of names) {
+            document.write(`name is ${name} <br />`);
+        }
+
+    </script>
+</body>
+</html>

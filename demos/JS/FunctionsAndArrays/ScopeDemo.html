@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable scope demo</title>
+    <script>
+        function scopeDemo() {
+            glob = 100;        // Implicit declaration - becomes global when the function is called
+
+            const VAT = 0.2; // Block scope and cannot be reassigned
+            // VAT = 0.15;	    // Uncaught TypeError: Assignment to constant variable.
+
+            var p = 10;	  // Function scope. Hoisted to top of nearest function and initialised with undefined.
+    
+            let q = 2;	// Block scope (see for loop)
+
+            let total;
+
+            for (let i = 0; i < 5; i++) { // Scope of i is within the for loop only
+                total = q * p + i; 
+            }
+
+            console.log(total);
+            console.log(i); // Error
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        scopeDemo();
+        console.log(glob);	   // 100
+        // console.log(VAT);  // Error
+        // console.log(p); 	 //Uncaught ReferenceError: p is not defined
+        // console.log(q);  // Error
+    </script>
+</body>
+
+</html>

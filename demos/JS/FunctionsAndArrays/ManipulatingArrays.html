@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating Arrays</title>
+</head>
+
+<body>
+    <script>
+        var names = ["Bob", "Ken", "Linda"];
+        document.write(names + "</br>");
+
+        names.push("Dave");
+        document.write(names + "</br>");
+
+        names.pop();
+        document.write(names + "</br>");
+
+        names.shift();
+        document.write(names + "</br>");
+        
+        names[1] = "Lee";
+        document.write(names + "</br>");
+        
+        let lindaIndex = names.indexOf("Linda");
+        names[lindaIndex] = "Lee";
+    </script>
+
+</body>
+
+</html>
