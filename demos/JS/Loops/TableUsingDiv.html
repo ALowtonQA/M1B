@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let table = "<div>";
+        for (let row = 1; row < 11; row++) {
+            table += "<div>";
+
+            for (let column = 1; column < 11; column++) {
+                let res = row * column;
+                if (res < 10)
+                    table += '0';
+                table += res + "|";
+            }
+
+            table += "</div>";
+        }
+
+        table += "</div>"
+        document.write(table);
+
+    </script>
+</body>
+
+</html>

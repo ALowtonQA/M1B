@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Table using table</title>
+        <style>
+            table, tr, td {
+                border: 1px solid blue;
+                text-align: center;
+                color: firebrick;
+            }
+        </style>
+    </head>
+
+    <body>
+        <script>
+            let table = "<table>";
+
+            for (let row = 1; row < 11; row++) {
+                table += "<tr>"; // table = table + "<tr>"
+
+                for (let column = 1; column < 11; column++) {
+                    let res = row * column;
+
+                    table += "<td>" + res + "</td>";
+                }
+
+                table += "</tr>";
+            }
+
+            table += "</table>"
+            document.write(table);
+
+        </script>
+    </body>
+</html>
