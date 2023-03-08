@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 for get request</title>
+    <script>
+        function loadDrink() {
+            const queryString = window.location.search;
+            console.log(queryString);
+            const urlParams = new URLSearchParams(queryString);
+
+            const radiodrink = urlParams.get('RadioDrink')
+            console.log(radiodrink);
+
+            const checkmilk = urlParams.get('CheckMilk')
+            console.log(checkmilk);
+
+            const checksugar = urlParams.get('CheckSugar')
+            console.log(checksugar);
+            
+            let sugar = checksugar == null ? 'no sugar' : 'sugar';
+            let milk = checkmilk == null ? 'no milk' : 'milk';
+            let drink = radiodrink + ' with ' + milk + ' and ' + sugar;
+            console.log(drink);
+
+            let div1 = document.getElementById('div1');
+            div1.innerHTML = drink;
+        };
+
+    </script>
+</head>
+
+<body onload="loadDrink()">
+    <div id="div1"></div>
+</body>
+
+</html>

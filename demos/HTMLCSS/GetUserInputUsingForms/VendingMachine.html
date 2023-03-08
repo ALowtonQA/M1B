@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+    <script>
+        function ValDrink(theForm) {
+            if (theForm.RadioDrink[2].checked && (theForm.CheckMilk.checked || theForm.CheckSugar.checked)) {
+                alert("Can't have milk or sugar with soup!");
+            	return false; // Problem
+            } else {
+                return true; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="Page2.html" method="get" name="Drinks" onsubmit="return ValDrink(this)">
+
+        <input type="radio" checked name="RadioDrink" value="Tea" />Tea
+        <input type="radio" name="RadioDrink" value="Coffee" />Coffee
+        <input type="radio" name="RadioDrink" value="Soup" />Soup
+
+        <input type="checkbox" name="CheckMilk" value="Yes" />Milk
+        <input type="checkbox" name="CheckSugar" value="Yes" />Sugar
+        
+        <input type="submit" name="OKButton" value="Vend" />
+    </form>
+    
+</body>
+</html>

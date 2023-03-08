@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Input Elements</title>
+</head>
+<body>
+    <div>
+        <span>Name</span>
+        <input type="text" name="name" />
+    </div>
+    <br />
+    <div>
+        <span>DOB:</span>
+        <input type="date" name="dob" />
+    </div>
+    <br />
+    <div>
+        <span>email:</span>
+        <input type="email" name="email" />
+    </div>
+    <br />
+
+    <br />
+    <div>
+        <span>url:</span>
+        <input type="url" name="url" />
+    </div>
+    <br />
+    <div>
+        <span>Speed:</span>
+        <input type="range" name="speed" value="24" min="0" max="200" oninput="this.nextElementSibling.value = this.value"/>
+        <output>24</output>
+    </div>
+    <br />
+    <div>
+        <span>Age:</span>
+        <input type="number" name="age" min="1" max="65" />
+        
+    </div>
+
+    <div>
+        <p>You can find more information about input types and some examples here</p>
+        <p><a href="https://www.w3schools.com/html/html_form_input_types.asp">Input types and demos</a></p>
+    </div>
+
+
+</body>
+</html>

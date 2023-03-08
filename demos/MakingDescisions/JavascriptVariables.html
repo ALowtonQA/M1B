@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript variables and scope</title>
+    <script>
+
+        var x = 2;
+        x = "Bob";
+
+        alert("the value of x is " + x);
+
+        function testing() {
+            y = 1; // Implicit declaration. Becomes global. Don't do this.
+            alert("the value of y in function is " + y);
+
+            var z = 123;
+            alert("the value of z in function is " + z);
+            
+            x = true;
+            alert("the value of x in function is " + x);
+        }
+
+    </script>
+    <script>
+        alert("the value of x before function is called is " + x);
+
+        testing();
+
+        alert("the value of x after function is called is " + x);
+
+        alert("the value of y is " + y);
+
+        alert("the value of z outside function is " + z);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

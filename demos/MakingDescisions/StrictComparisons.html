@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict Comparisons</title>
+</head>
+
+<body>
+    <script>
+        var answer = confirm('Are you sure?'); // True or False
+
+        if (answer == 0) // 0 and false are equivalent
+        {
+            alert('Cancel pressed');
+        }
+
+        if (answer === 0) // Strict comparison – compare data types first
+        {
+            alert('Cancel pressed');
+        }
+
+        if (answer === false) // Strict comparison – compare data types first
+        {
+            alert('real boolean tested Cancel pressed');
+        }
+
+        var num = "10";
+
+        if (num == 10) {
+            alert("Number 10 was found");
+        }
+
+        if (num === 10) {
+            alert("A real Number 10 was found");
+        } else {
+            alert("Number 10 was not found");
+        }
+
+    </script>
+</body>
+
+</html>
