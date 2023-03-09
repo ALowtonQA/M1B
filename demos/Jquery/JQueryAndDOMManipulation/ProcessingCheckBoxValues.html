@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Checkbox Values</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        function Register() {
+
+            // var over18 = $("input[name=over18]:checked").val();
+            var over18 = $("#ov18:checked").val();
+
+            if (over18 == 'y') {
+                alert('Is over 18');
+            } else {
+                alert("Is under 18");
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <form onsubmit="Register()">
+
+        Over 18?<input type="checkbox" name="over18" id="ov18" value="y" />
+        
+        <input type="submit" value="submit" />
+    </form>
+
+</body>
+
+</html>

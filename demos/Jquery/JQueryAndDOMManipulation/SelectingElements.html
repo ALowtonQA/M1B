@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Selecting Elements</title>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script>
+            // $(document).ready(function () {
+            //     demo();
+            // });
+
+            function demo() {
+                $('#divInfo').html('The best is yet to come');
+                
+                $('.spring').css('color','green');
+
+                $('p').html('There is no present like time');
+
+                $('p[name=sales]').html('Sales report of the day');
+
+                $('h1, p').css('color', 'blue');
+
+                $('div p').css('color', 'Green');
+
+            }
+
+        </script>
+    </head>
+    <body>
+        <div id="divInfo">Notes</div>
+        <div class="spring">Spring is coming</div>
+        <div class="spring">very soon!</div>
+        <p></p>
+        <p></p>
+        <p name="sales"></p>
+
+
+        <h1>The Project</h1>
+
+        <div>
+            Hello all
+            <p>I am different</p>
+        </div>
+
+        <button onclick="demo()">Click me!</button>
+    </body>
+</html>

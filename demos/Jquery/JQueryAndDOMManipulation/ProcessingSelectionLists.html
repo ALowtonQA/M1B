@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processing Selection Lists</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        function Register() {
+            var info = "Index is: " + $("#options option:selected").index() +
+                " text is " + $("#options option:selected").text();
+                
+            alert(info);
+        }
+
+    </script>
+</head>
+<body>
+    <form onsubmit="Register()">
+        <select id="options">
+            <option>option-1</option>
+            <option>option-2</option>
+            <option>option-3</option>
+        </select>
+        <input type="submit" value="submit" />
+    </form>
+
+</body>
+</html>
