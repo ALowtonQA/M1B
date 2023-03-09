@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert an Object to JSON</title>
+</head>
+
+<body>
+    <script>
+        // var names = ["Bob", "Ken", "Linda"];
+        // console.log(names);
+        
+        // let data = JSON.stringify(names); //Convert to JSON
+        // console.log(data);
+
+        // var ages = [21,23,65];
+        // let data = JSON.stringify(ages);
+
+        // console.log(data);
+
+        // let myarr = JSON.parse(data);
+
+        // console.log(myarr);
+
+        let person = { 
+            firstName: "Bob", 
+            surname: "Smith", 
+            age:21 
+        }
+
+        console.log(person);
+
+        let data1 = JSON.stringify(person);
+
+        console.log(data1);
+
+        console.log(JSON.parse(data1));
+    </script>
+</body>
+
+</html>

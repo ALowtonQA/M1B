@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AddingObjectMethods</title>
+</head>
+<body>
+    <!-- <script src="main.js"></script> -->
+    <script>
+        let person1 = {
+            firstName: "Dean",
+            surname: "Dashwood",
+            showAge: function () {
+                alert(`${this.firstName} is ${this.age} years old`);
+            }
+        };
+
+        person1.age = 42;
+        person1.showAge();
+
+        person1.showFullName = function () {
+            alert(`${this.firstName} ${this.surname}`);
+            this.showAge();
+        };
+
+        person1.showFullName(person1);
+    </script>
+</body>
+</html>
