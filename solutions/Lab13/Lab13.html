@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab13</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        function displayInfo() {
+            var info = "<p>You ordered " + $('#qty').val() + " x " + $('#productName').val() + "</p><p>delivery required : ";
+
+            if ($('#delivery:checked').val() == "y") {
+                info += 'yes';
+            }
+            else {
+                info += 'no'
+            }
+            
+            info += "</p>";
+ 
+            $('#info').html(info);
+        }
+    </script>
+</head>
+<body>
+    <h1>Example page</h1>
+    
+    <form onsubmit="displayInfo(); return false;">
+        <p>Enter the name of the product you want to buy: <input type="text" id="productName"/></p>
+        <p>Enter the quantity you want to buy: <input type="number" id="qty" /></p>
+        <p>Do you require delivery? <input type="checkbox" id="delivery" value="y" /></p>
+        <p><input type="submit" value="Place order" /></p>
+    </form>
+
+    <div id="info"></div>
+</body>
+</html>

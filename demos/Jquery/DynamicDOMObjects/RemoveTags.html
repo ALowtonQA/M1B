@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Remove Tags</title>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script>
+            function RemoveElements() {
+
+                var removed = true;
+
+                if ($("input[name=removetxtcount]:checked").val() == "y") {
+                    $('#txtCount').remove();
+
+                    removed = false;
+                }
+                if ($("input[name=removeparagraphs]:checked").val() == "y") {
+                    $('p').remove();
+
+                    removed = false;
+                }
+                if ($("input[name=removeyellow]:checked").val() == "y") {
+                    $('.yellowBack').remove();
+
+                    removed = false;
+                }
+
+                return removed;
+            }
+        </script>
+        <style>
+            p{background-color:red;}
+            .yellowBack{background-color:yellow;}
+            #txtCount{background-color:chartreuse;}
+        </style>
+    </head>
+    <body>
+        <div id="txtCount"> I am text count</div>
+        <p>para 1</p>
+        <p>para 1</p>
+        <p>para 1</p>
+        <p>para 1</p>
+        <p>para 1</p>
+        <div class="yellowBack">I am yellow</div>
+
+        <form onsubmit="return RemoveElements()">
+            Remove text count<input type="checkbox" name="removetxtcount" checked value="y" />
+            Remove paragraphs<input type="checkbox" name="removeparagraphs" checked value="y" />
+            Remove Yellow<input type="checkbox" name="removeyellow" checked value="y" />
+            <input type="submit" value="submit" />
+        </form>
+        <br />
+    </body>
+</html>

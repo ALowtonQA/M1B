@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 12</title>
+</head>
+<body>
+    <div id="div1"></div>
+
+    <script>
+
+        //var myVariable = {
+        //    "menu": {
+        //        "id": "file",
+        //        "value": "File",
+        //        "popup": {
+        //            "menuitem": [
+        //                { "value": "New", "onclick": "CreateNewDoc()" },
+        //                { "value": "Open", "onclick": "OpenDoc()" },
+        //                { "value": "Close", "onclick": "CloseDoc()" }
+        //            ]
+        //        }
+        //    }
+        //};
+
+        var myJson = `{
+            "menu": {
+                "id": "file",
+                "value": "File",
+                "popup": {
+                    "menuitem": [
+                        { "value": "New", "onclick": "CreateNewDoc()" },
+                        { "value": "Open", "onclick": "OpenDoc()" },
+                        { "value": "Close", "onclick": "CloseDoc()" }
+                    ]
+                }
+            }
+        }`;
+
+        var myVariable = JSON.parse(myJson);
+
+        alert(myVariable.menu.id);
+
+        // var div1 = document.getElementById('div1');
+
+        // var child = document.createElement("div");
+        // child.innerText = "value: " + myVariable.menu.id;
+        // div1.appendChild(child);
+
+        // var child = document.createElement("div");
+        // child.innerText = "value: " + myVariable.menu.value;
+        // div1.appendChild(child);
+
+        // var child = document.createElement("div");
+        // child.innerText = "value: " + myVariable.menu.popup.menuitem[1].value;
+        // div1.appendChild(child);
+
+    </script>
+</body>
+</html>
