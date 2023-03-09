@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab 9</title>
+    <style>
+
+        table {
+            width: 50%;
+        }
+        .bigNumber{
+            color:Blue;
+            font-weight:800;
+        }
+    </style>
+    <script>
+        function multiplicationTable(maxRows,maxCols) {
+            var table = "<table>";
+            for (var row = 1; row < maxRows + 1; row++) {
+                table += "<tr>";
+                for (var col = 1; col < maxCols + 1; col++) {
+                    table += "<td class='tableItem'>" + row * col + "</td>";
+
+                }
+                table += "</tr>";
+
+            }
+            table += "</table>";
+
+            return table;
+        }
+
+        function getNames() {
+            result = "";
+            var names = ["Alby", "Alex", "Glen", "Thomas", "Tyrell"];
+            var ages = [21, 24, 23, 26, 19];
+
+            for (var i = 0; i < names.length; i++) {
+                result +="<p>" + names[i] + " is " + ages[i] + " years old</p>";
+            }
+            
+            //alert(result);
+
+            document.getElementById("divNames").innerHTML = result;
+            //document.getElementById("divNames").innerText = result;
+        }
+
+        function highLightBigNumbers() {
+
+            allNumber = document.getElementsByClassName("tableItem");
+            for (var i = 0; i < allNumber.length; i++) {
+                if (parseInt(allNumber[i].innerText) > 10) {
+                    allNumber[i].className += allNumber[i].className ? " bigNumber" : "bigNumber";
+                    allNumber[i].style.backgroundColor = "yellow";
+                }
+            }
+
+        }
+
+
+    </script>
+</head>
+<body>
+    <div id="divNames"></div>
+    <script>getNames();
+        document.write( multiplicationTable(10, 10));
+        highLightBigNumbers();
+    </script>
+</body>
+</html>

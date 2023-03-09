@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 10</title>
+    <script>
+        function Show() {
+            document.getElementById('moreText').style.display = 'block';
+        }
+        function Hide() {
+            document.getElementById('moreText').style.display = 'none';
+        }
+    </script>
+</head>
+<body onload="document.getElementById('someText').style.color='blue'">
+    <div id="someText">The quick brown dog jumped over the lazy dog.</div>
+    <button onclick="document.getElementById('someText').style.display='block'">Show</button>
+    <button onclick="document.getElementById('someText').style.display='none'">Hide</button>
+
+    <div id="moreText">Mary had a little lamb, she named it mint sauce.</div>
+    <button onclick="Show()">Show</button>
+    <button onclick="Hide()">Hide</button>
+    <br/>
+    <noscript style="color: red ;">The buttons will not work because you do not haved javascript enabled</noscript>
+</body>
+</html>

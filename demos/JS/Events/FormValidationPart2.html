@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation PArt2</title>
+    <script>
+    function ValDrink(theForm) {
+        var divInfo = document.getElementById("divInfo");
+
+        if (theForm.RadioDrink.value == "soup" && (theForm.CheckMilk.checked || theForm.CheckSugar.checked)) {
+            divInfo.innerHTML = "Can't have milk or sugar with soup!";
+            return false;
+        }
+
+        return true;
+    }
+    </script>
+
+</head>
+<body>
+    <form method="get" onsubmit="return ValDrink(this)">
+
+        <input type="radio" checked name="RadioDrink" value="tea" />Tea
+        <input type="radio" name="RadioDrink" value="coffee" />Coffee
+        <input type="radio" name="RadioDrink" value="soup" />Soup
+
+        <input type="checkbox" name="CheckMilk" />Milk
+        <input type="checkbox" name="CheckSugar" />Sugar
+
+        <input type="submit" value="Vend" />
+    </form>
+
+    <div id="divInfo" style="color:red"></div>
+</body>
+</html>
