@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The call fails</title>
+    <style>
+        #errMsg {
+            color: red;
+        }
+    </style>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope, $http) {
+            $scope.customers = null;
+            $scope.error = '';
+
+            let successfulHandler = function (response) {
+                $scope.customers = response.data;
+                $scope.error = '';
+            }
+
+            let failHandler = function (err) {
+                $scope.error = `There's been a problem: ${err.status}, ${err.statusText}`;
+            }
+
+            $scope.doClick = function () {
+                $http({
+                    method: "Get", url: 'http://localhost:5000/getcutomers'
+                }).then(successfulHandler, failHandler);
+            }
+
+        }
+        myModule.controller("myController", myController);
+
+    </script>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <button ng-click="doClick()">Get Customers</button>
+    <table>
+        <tr ng-hide="customers==null"><th>Customer ID</th><th>Contact Name</th><th>City</th></tr>
+        <tr ng-repeat="cus in customers">
+            <td>{{cus.CustomerID}}</td>
+            <td>{{cus.ContactName}}</td>
+            <td>{{cus.City}}</td>
+        </tr>
+    </table>
+    <div id="errMsg" ng-hide="error==''">{{error}}</div>
+</body>
+</html>

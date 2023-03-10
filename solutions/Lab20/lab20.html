@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 20</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope) {
+            $scope.products = [
+                { name: 'book', unitPrice: 10, stockLevel: 3 },
+                { name: 'pencil', unitPrice: 2, stockLevel: 10 },
+                { name: 'ruler', unitPrice: 5, stockLevel: 6 }
+            ];
+            $scope.currentProduct = null;
+            $scope.products.selectProduct = function(product){
+                $scope.currentProduct = product;
+            };
+        }
+        myModule.controller("myController", myController);
+    </script>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <table border="1">
+        <tr><th>Product</th><th>Unit Price</th><th>Stock Level</th></tr>
+        <tr ng-repeat="prod in products" ng-click="products.selectProduct(prod)">
+            <td>{{prod.name}}</td>
+            <td>{{prod.unitPrice}}</td>
+            <td>{{prod.stockLevel}}</td>
+        </tr>
+    </table>
+    <br />
+    <div ng-hide="currentProduct==null">
+        <h2>The current Product is:-</h2>
+        <p>Product: {{currentProduct.name}}</p>
+        <p>Unit Price: {{currentProduct.unitPrice | currency:'£'}}</p>
+    </div>
+</body>
+</html>

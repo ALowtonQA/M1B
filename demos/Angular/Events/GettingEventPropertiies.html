@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Event Properties</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        angular.module("myapp", [])
+            .controller("MyController", function ($scope) {
+                $scope.save = {};
+                $scope.image = {};
+
+                $scope.save.doClick = function () {
+                    alert("clicked");
+                }
+                
+                $scope.image.doClick = function (event) {
+                    alert("clicked at X and Y of:" +
+                        event.clientX + "," + event.clientY);
+                }
+            });
+    </script>
+    <style>
+        img {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+
+<body ng-app="myapp">
+    <div ng-controller="MyController">
+        <div ng-click="save.doClick()">Save</div>
+        <img id="image1" src="220px-Leeds_Rhinos.png" alt="Leeds Rhinos" ng-click="image.doClick($event)"/>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passing Data to event handlers</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        var myModule = angular.module("myModule", []);
+        var myController = function ($scope) {
+            $scope.students = [
+                { name: "Jonathan", course: "Finance" }, { name: "Sasha", course: "Marketing" },
+                { name: "Sean", course: "Planning" }, { name: "Chris", course: "Networking" }
+            ];
+
+            $scope.doClick = function (student) {
+                alert(student.name + "\n" + student.course);
+            }
+        }
+        myModule.controller("myController", myController);
+
+    </script>
+    <style>
+        table, td, th {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body ng-app="myModule" ng-controller="myController">
+    <table>
+        <tr><th>Name</th><th>Course</th></tr>
+        <tr ng-repeat="stu in students" ng-click="doClick(stu)">
+            <td>{{stu.name}}</td>
+            <td>{{stu.course}}</td>
+        </tr>
+    </table>
+</body>
+</html>

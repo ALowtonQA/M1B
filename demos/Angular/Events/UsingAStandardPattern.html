@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using a standard pattern</title>
+    <script src="scripts/angular.js"></script>
+    <script>
+        angular.module("myapp", [])
+            .controller("MyController", function ($scope) {
+                $scope.save = {};
+                $scope.save.doClick = function () {
+                    alert("save clicked");
+                }
+            });
+
+    </script>
+</head>
+<body>
+    <div ng-controller="MyController">
+        <div ng-click="save.doClick()">Save</div>
+    </div>
+</body>
+</html>
