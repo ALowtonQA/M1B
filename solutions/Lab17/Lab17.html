@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab17 JQuery</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            //alert("ready ok");
+
+            $.getJSON("https://api.tfl.gov.uk/Line/Mode/tube/Status",
+                function (res) {
+
+                    // console.log(res);
+
+                    $.each(res, function (i, r) {
+                        $('<p/>').text(r.name + ": " + r.lineStatuses[0].statusSeverityDescription).appendTo('#divInfo');
+                    });
+                }
+            );
+
+        });// end of ready
+
+    </script>
+</head>
+<body>
+    <div id="divInfo"></div>
+</body>
+</html>
