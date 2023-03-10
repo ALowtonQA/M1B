@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 21</title>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/Controller.js"></script>
+    <style>
+        div.white-space-pre-line {
+            white-space: pre-line;
+        }
+    </style>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="customerController">
+        
+        <input type="button" value="Load data" ng-click="loadData()"/>
+        <div ng-hide="customers==null">
+            <table border="1">
+                <tr><th>Customer ID</th><th>Contact Name</th></tr>
+                <tr ng-repeat="cus in customers">
+                    <td>{{cus.CustomerID}}</td>
+                    <td>{{cus.ContactName}}</td>
+                </tr>
+            </table>
+        </div>
+        <div ng-show="loading">Loading...</div>
+        <div class="white-space-pre-line" ng-hide="errorText==null">Error: {{errorText}}</div>
+    </div>
+    
+
+</body>
+</html>
