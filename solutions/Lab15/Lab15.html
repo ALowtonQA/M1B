@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab15</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <style>
+        .name {
+            width:20%;
+            border-style:solid;
+            border-width:1px;
+            border-color:blue;
+        }
+        .odditems{
+            background-color:yellow;
+        }
+    </style>
+    <script>
+        function addName() {
+            var name = $('#theName').val();
+            $('<div class="name">' + name + '</div>').appendTo('#names');
+            $('#names div:odd').addClass('odditems');
+            return false;
+        }
+    </script>
+</head>
+<body>
+    <h1>List of Names</h1>
+    <div id="names"></div>
+    <h2>Add new names</h2>
+    <form onsubmit="return addName()">
+        Enter a name <input type="text" id="theName"/>
+        <input type="submit" value="Add"/>
+    </form>
+
+</body>
+</html>
