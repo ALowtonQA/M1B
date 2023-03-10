@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Handling KeyPresses</title>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script>
+            $(document).ready(function () {
+
+                $('#PhoneDiv').keypress(function (e) {
+                    if ((e.keyCode < 48 || e.keyCode > 57) && e.keyCode != 45) {
+                        $('#message').html('Only number 0 to 9 and a - are allowed');
+                        return false;
+                    }
+
+                    $('#message').html(''); // clears the message
+
+                }); // end of keypress event
+            });  // end of ready
+        </script>
+    </head>
+    <body>
+        <div id="PhoneDiv">
+            <span>Phone:</span><input type="text" maxlength="12" />
+        </div>
+        <div id="message"></div>
+    </body>
+</html>

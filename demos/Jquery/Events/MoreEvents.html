@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#image1').mousemove(function (e) {
+                var X = e.pageX - $(this).offset().left;
+                var Y = e.pageY - $(this).offset().top;
+                $("#div1").html(X + "," + Y);
+            });
+
+            // $('#image1').mouseenter(function (e) {
+            //     $("#div1").html("Mouse enter detected");
+            // });
+
+            // $('#image1').mouseout(function (e) {
+            //     $("#div1").html("Mouse out detected");
+            // });
+        });
+
+    </script>
+    <Style>
+        img {
+            border: 1px solid blue;
+        }
+    </Style>
+</head>
+<body>
+    <div id="div1">move mouse over the image</div>
+    <img id="image1" src="220px-Leeds_Rhinos.png" alt="Team image" />
+</body>
+</html>

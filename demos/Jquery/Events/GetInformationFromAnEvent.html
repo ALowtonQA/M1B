@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Information from an event</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function () {
+            // $("#div1").click(function (e) {
+            //     // alert($(e.target).text());
+            //     // or simply:
+            //     alert($(this).text());
+            // });
+
+            $('#image1').click(function (e) {
+                var X = e.pageX - $(this).offset().left;
+                var Y = e.pageY - $(this).offset().top;
+                alert(X + "," + Y);
+            });
+        });
+
+    </script>
+    <style>
+        img {
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <!-- Click on this text! -->
+        Click the image to get the mouse coordinates
+    </div>
+    <img id="image1" src="220px-Leeds_Rhinos.png" alt="Leeds Rhinos" />
+</body>
+</html>

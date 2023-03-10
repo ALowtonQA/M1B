@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Removing and Toggling using a class</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <style>
+        .transform30 {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            transform: rotate(30deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="divQA">Welcome to QA</div>
+    <script>
+        $('#divQA').addClass('transform30');
+
+        //$('#divQA').toggleClass('transform30');
+    </script>
+
+
+
+    <div>Some more stuff</div>
+    <script>
+        $(document).ready(function () {
+            alert('Now lets remove the class');
+            if ($('#divQA').hasClass('transform30')) {
+               $('#divQA').removeClass('transform30');
+            }
+            //$('#divQA').toggleClass('transform30');
+        });
+    </script>
+</body>
+</html>

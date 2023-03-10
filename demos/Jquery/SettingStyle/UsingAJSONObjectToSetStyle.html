@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Using a JSON obbjexct to set style</title>
+        <script src="scripts/jquery-3.6.0.js"></script>
+        <script>
+            $(document).ready(function () {
+                let myStyle = {
+                    color: 'Red',
+                    'font-size': '14pt',
+                    position: 'absolute',
+                    left: '100px',
+                    top: '100px',
+                    'transform': 'rotate(30deg)'
+                };
+
+                alert("Ready to change Style");
+                
+                $("#div1").css(myStyle);
+                
+                // $("#div1").css("color", "green");
+            });
+
+        </script>
+    </head>
+    <body>
+        <div id="div1">Welcome to QA</div>
+    </body>
+</html>
