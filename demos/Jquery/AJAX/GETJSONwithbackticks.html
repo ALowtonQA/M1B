@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GetJson with backticks in success function</title>
+    <style>
+        .entries {
+            margin-bottom: 10px;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 25%;
+            padding: 10px;
+            background-color: antiquewhite;
+        }
+    </style>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+             //https://api.tfl.gov.uk/Line/Mode/tube/Status - try this!
+            $.getJSON("http://localhost:5000/getcutomers", function (res) {
+
+                    // console.log(res);
+
+                    for (i = 0; i < res.length; i++) {
+                        $("#divInfo").append(`<div class="entries">Contact Name: ${res[i].ContactName} <br/> Country: ${res[i].Country}</div>`);
+                    }
+
+                }
+            ).fail(function(err) {
+                // console.log(err);
+                console.error(`Request failed, dummy. Try Again!`);
+            });
+        });
+    </script>
+
+
+</head>
+
+<body>
+    <div id="divInfo"></div>
+</body>
+
+</html>

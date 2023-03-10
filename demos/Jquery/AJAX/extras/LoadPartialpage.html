@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Ajax Load to load a partial page</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(function () {
+
+            $('#LoadButton').click(function () {
+                $('#div1').load('register.html #UserInfoDiv');
+            });
+        }); // End of ready
+</script>
+
+</head>
+<body>
+    <input id="LoadButton" type="button" value="Load Page" />
+    <div id="div1"></div>
+</body>
+</html>

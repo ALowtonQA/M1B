@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a Callback</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        
+
+        $(function () {
+
+            function asyncCommonAjaxCall(callback) {
+            $.ajax({
+                type: "GET",
+                url: "http://localhost:5000/getcustomers",
+                dataType: "json",
+                success: function (data) {
+                    callback(data);
+                }
+            });
+        };
+
+            $("#btnSayHi").click(function () {
+                //alert("I have been clicked");
+                asyncCommonAjaxCall(
+                    function (data) {
+                        $.each(data, function (i, r) {
+                            $('<p/>').text(r.CompanyName).
+                                appendTo('#divInfo');
+                        });
+                    }
+                );
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <button id="btnSayHi">Load Customers</button>
+    <div id="divInfo"></div>
+</body>
+
+</html>

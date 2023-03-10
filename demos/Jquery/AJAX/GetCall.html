@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Get</title>
+    <script src="scripts/jquery-3.6.0.js"></script>
+    <script>
+        $(function () { //https://api.tfl.gov.uk/Line/Mode/tube/Status - try this!
+            $.get("http://localhost:5000/getcustomers",
+                function (res) {
+                    console.log(res);
+
+                    // alert("Here we goooooo");
+
+                    // $.each(res, function (i, entry) {
+                    //     $('<p/>').text(entry.ContactName).appendTo('#divInfo');
+                    // });
+                }
+            );
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="divInfo"></div>
+</body>
+
+</html>
